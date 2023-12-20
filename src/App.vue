@@ -28,6 +28,7 @@ export default {
   methods: {
     defineSearch(film) {
       this.lookedFor = film;
+      this.options.params.query = film
       this.axiosRequest()
     },
     axiosRequest() {
