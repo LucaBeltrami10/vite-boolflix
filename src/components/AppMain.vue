@@ -1,9 +1,12 @@
-<template></template>
+<template>
+    <div>{{ axiosResponse }}</div>
+</template>
 
 <script>
 export default {
     props: {
         lookedFor: String,
+        axiosResponse: Array,
     }
 
 }
