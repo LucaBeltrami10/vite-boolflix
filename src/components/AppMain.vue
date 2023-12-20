@@ -1,5 +1,4 @@
 <template>
-    <!-- <div>{{ axiosResponse }}</div> -->
     <div v-for="film in axiosResponse.data.results">
         <p>titolo: {{ film.title }}</p>
         <p>titolo originale: {{ film.original_title }}</p>

@@ -11,7 +11,6 @@ export default {
   },
   data() {
     return {
-      lookedFor: "",
       options: {
         method: 'GET',
         url: 'https://api.themoviedb.org/3/search/movie',
@@ -27,7 +26,6 @@ export default {
   },
   methods: {
     defineSearch(film) {
-      this.lookedFor = film;
       this.options.params.query = film
       this.axiosRequest()
     },
