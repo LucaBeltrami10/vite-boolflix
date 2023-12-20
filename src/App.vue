@@ -51,4 +51,6 @@ export default {
   <AppMain :lookedFor="lookedFor" :axiosResponse="axiosResponse" />
 </template>
 
-<style scoped></style>
+<style lang="scss">
+@use '../src/style/general.scss'
+</style>
