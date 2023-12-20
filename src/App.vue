@@ -1,6 +1,31 @@
-<script setup>
+<script>
+
+import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
+
+export default {
+  components: {
+    AppHeader,
+    AppMain
+  },
+  data() {
+    return {
+      lookedFor: "",
+
+    }
+  },
+  methods: {
+    defineSearch(film) {
+      this.lookedFor = film
+    }
+  }
+}
+
 </script>
 
-<template></template>
+<template>
+  <AppHeader @moviesearched="defineSearch" />
+  <AppMain />
+</template>
 
 <style scoped></style>
