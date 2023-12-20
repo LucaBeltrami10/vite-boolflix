@@ -25,7 +25,7 @@ export default {
 
 <template>
   <AppHeader @moviesearched="defineSearch" />
-  <AppMain />
+  <AppMain :lookedFor="lookedFor" />
 </template>
 
 <style scoped></style>

@@ -1,9 +1,10 @@
-<template>
-    main
-</template>
+<template></template>
 
 <script>
 export default {
+    props: {
+        lookedFor: String,
+    }
 
 }
 </script>
