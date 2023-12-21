@@ -4,7 +4,7 @@
         <p>titolo: {{ film.title }}</p>
         <p>titolo originale: {{ film.original_title }}</p>
         <p>lingua: {{ film.original_language }}</p>
-        <p>voto: {{ film.vote_average }}/10</p>
+        <p>voto: {{ film.vote_average }}/10 oppure {{ roundToFive(parseInt(film.vote_average)) }} /5</p>
     </div>
 </template>
 
@@ -19,6 +19,9 @@ export default {
         }
     },
     methods: {
+        roundToFive(number) {
+            return Math.floor(number / 2)
+        },
 
     }
 
