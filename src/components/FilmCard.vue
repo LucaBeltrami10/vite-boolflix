@@ -12,7 +12,6 @@
                 <p>{{ original_language }}</p> <img :src="`/src/assets/img/png100px/${original_language}.png`" alt="">
             </div>
             <div>{{ vote_average }}</div>
-
         </div>
     </article>
 </template>
@@ -66,6 +65,4 @@ article {
         }
     }
 }
-
-;
 </style>
