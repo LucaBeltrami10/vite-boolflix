@@ -6,6 +6,17 @@
 
 <script>
 export default {
+    props: {
+        requestedFilms,
+    },
+    data() {
+        return {
+
+        }
+    },
+    methods: {
+
+    }
 
 }
 </script>
