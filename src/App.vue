@@ -20,7 +20,7 @@ export default {
           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjY2QxYjFmNjliZmFlNWQxZTE4MzQ0NmVmZWZiMTA5YyIsInN1YiI6IjY1ODMwNTYwZTI5NWI0M2JjNzY4NzExNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lZNNGkfj6G0PG7Dkrowbcmo9dtKA-R4srQlPpR2-YKI'
         }
       },
-      axiosResponse: [],
+      requestedFilms: [],
 
     }
   },
@@ -32,8 +32,8 @@ export default {
     axiosRequest() {
       axios.request(this.options)
         .then((response) => {
-          this.axiosResponse = response
-          console.log(response.data);
+          this.requestedFilms = response.data.results
+          console.log(response.data.results);
         })
         .catch(function (error) {
           console.error(error);
@@ -46,7 +46,7 @@ export default {
 
 <template>
   <AppHeader @moviesearched="defineSearch" />
-  <AppMain :lookedFor="lookedFor" :axiosResponse="axiosResponse" />
+  <AppMain :requestedFilms="requestedFilms" />
 </template>
 
 <style lang="scss">

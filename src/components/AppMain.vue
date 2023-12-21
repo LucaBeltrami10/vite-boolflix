@@ -1,5 +1,5 @@
 <template>
-    <div v-for="film in axiosResponse.data.results">
+    <div v-for="film in requestedFilms">
         <p>titolo: {{ film.title }}</p>
         <p>titolo originale: {{ film.original_title }}</p>
         <p>lingua: {{ film.original_language }}</p>
@@ -10,8 +10,7 @@
 <script>
 export default {
     props: {
-        lookedFor: String,
-        axiosResponse: Object,
+        requestedFilms: Object,
     }
 
 }
