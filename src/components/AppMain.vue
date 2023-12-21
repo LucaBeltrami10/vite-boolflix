@@ -1,14 +1,18 @@
 <template>
     <!-- <img :src="`../assets/img/png100px/${film.original_language}.png`" alt="">
     <img src="../assets/img/png100px/it.png" alt=""> -->
-
-    <FilmCard v-for="film in requestedFilms" :title="film.title" :poster_path="film.poster_path"
-        :original_title="film.original_title" :original_language="film.original_language"
-        :vote_average="film.vote_average" />
-
-    <SeriesCard v-for="series in requestedTvSeries" :name="series.name" :poster_path="series.poster_path"
-        :original_name="series.original_name" :original_language="series.original_language"
-        :vote_average="series.vote_average" />
+    <main>
+        <section class="film-section">
+            <FilmCard v-for="film in requestedFilms" :title="film.title" :poster_path="film.poster_path"
+                :original_title="film.original_title" :original_language="film.original_language"
+                :vote_average="film.vote_average" />
+        </section>
+        <section class="series-section">
+            <SeriesCard v-for="series in requestedTvSeries" :name="series.name" :poster_path="series.poster_path"
+                :original_name="series.original_name" :original_language="series.original_language"
+                :vote_average="series.vote_average" />
+        </section>
+    </main>
 </template>
 
 <script>
@@ -40,8 +44,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div {
-    background-color: rgb(240, 98, 98);
-    margin: 3rem;
+@use '../style/partials/variables' as *;
+@use '../style/partials/mixins' as *;
+
+main {
+    height: 85vh;
+    background-color: $bg-main;
+
+    section.film-section {
+        @include flex(row, space-between, center);
+        flex-wrap: wrap;
+
+    }
+
+    section.series-section {
+        @include flex(row, space-between, center);
+        flex-wrap: wrap;
+
+    }
+
+
+
+
+
 }
 </style>
