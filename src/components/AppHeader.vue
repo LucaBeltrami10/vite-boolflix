@@ -1,5 +1,6 @@
 <template>
-    <input type="text" v-model="lookedFor" @keyup.enter="$emit('moviesearched', lookedFor)">
+    <input type="text" v-model="lookedFor">
+    <button @click="$emit('moviesearched', lookedFor)"> Cerca! </button>
 </template>
 
 <script>
