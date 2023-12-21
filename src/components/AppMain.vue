@@ -50,6 +50,7 @@ export default {
 main {
     height: 85vh;
     background-color: $bg-main;
+    overflow: scroll;
 
     section.film-section {
         @include flex(row, space-between, center);
