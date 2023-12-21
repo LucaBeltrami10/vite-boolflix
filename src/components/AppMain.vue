@@ -12,6 +12,7 @@
 export default {
     props: {
         requestedFilms: Object,
+        requestedTvSeries: Object,
     },
     data() {
         return {
