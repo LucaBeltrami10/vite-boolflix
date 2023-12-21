@@ -12,6 +12,14 @@
 export default {
     props: {
         requestedFilms: Object,
+    },
+    data() {
+        return {
+
+        }
+    },
+    methods: {
+
     }
 
 }
