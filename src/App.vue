@@ -68,7 +68,7 @@ export default {
 
 <template>
   <AppHeader @movieSearched="defineSearch" />
-  <AppMain :requestedFilms="requestedFilms" />
+  <AppMain :requestedFilms="requestedFilms" :requestedTvSeries="requestedTvSeries" />
 </template>
 
 <style lang="scss">
