@@ -6,7 +6,7 @@
         <p>lingua: {{ film.original_language }}</p>
         <p>voto: {{ film.vote_average }}/10 oppure {{ roundToFive(parseInt(film.vote_average)) }} /5</p>
     </div>
-    <div v-for="series in requestedTvSeries"></div>
+    <div v-for="series in requestedTvSeries">serie rilevata</div>
 </template>
 
 <script>

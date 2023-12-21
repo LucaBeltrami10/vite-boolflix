@@ -40,6 +40,7 @@ export default {
       this.urlMovie.params.query = searched
       this.urlTvSeries.params.query = searched
       this.axiosRequestMovie()
+      this.axiosRequestTvSeries()
     },
     axiosRequestMovie() {
       axios.request(this.urlMovie)
