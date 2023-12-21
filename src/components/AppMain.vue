@@ -7,7 +7,7 @@
         <!-- <img :src="`../assets/img/png100px/${film.original_language}.png`" alt="">
         <img src="../assets/img/png100px/it.png" alt=""> -->
         <img :src="`/src/assets/img/png100px/${film.original_language}.png`" alt="">
-        <p>voto: {{ film.vote_average }}/10 oppure {{ roundToFive(parseInt(film.vote_average)) }} /5</p>
+        <p>voto: {{ roundToFive(parseInt(film.vote_average)) }} /5</p>
     </div>
     <div v-for="series in requestedTvSeries">
         <img :src="`https://image.tmdb.org/t/p/w185/${series.poster_path}`" :alt="`${series.name} cover`">
