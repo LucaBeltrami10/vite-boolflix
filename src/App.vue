@@ -45,7 +45,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader @moviesearched="defineSearch" />
+  <AppHeader @movieSearched="defineSearch" />
   <AppMain :requestedFilms="requestedFilms" />
 </template>
 
