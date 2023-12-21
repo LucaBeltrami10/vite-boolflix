@@ -1,5 +1,4 @@
 <script>
-
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import axios from 'axios'
@@ -73,5 +72,5 @@ export default {
 </template>
 
 <style lang="scss">
-@use '../src/style/general.scss'
+@use '../src/style/general.scss' as *;
 </style>
