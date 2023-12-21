@@ -14,7 +14,11 @@
 <script>
 export default {
     props: {
-        requestedFilms,
+        title,
+        original_title,
+        poster_path,
+        original_language,
+        vote_average
     },
     data() {
         return {
