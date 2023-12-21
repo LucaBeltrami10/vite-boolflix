@@ -1,17 +1,17 @@
 <template>
     <div>
-
+        serie
     </div>
 </template>
 
 <script>
 export default {
     props: {
-        name,
-        original_name,
-        poster_path,
-        original_language,
-        vote_average
+        name: 'string',
+        original_name: 'string',
+        poster_path: 'string',
+        original_language: 'string',
+        vote_average: 'string',
     },
     data() {
         return {
