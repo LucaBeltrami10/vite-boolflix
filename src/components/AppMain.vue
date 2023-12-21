@@ -4,7 +4,9 @@
         <p>titolo: {{ film.title }}</p>
         <p>titolo originale: {{ film.original_title }}</p>
         <p>lingua: {{ film.original_language }}</p>
+        <!-- `../assets/img/png100px/${film.original_language}.png` -->
         <img :src="`../assets/img/png100px/${film.original_language}.png`" alt="">
+        <img src="../assets/img/png100px/it.png" alt="">
         <p>voto: {{ film.vote_average }}/10 oppure {{ roundToFive(parseInt(film.vote_average)) }} /5</p>
     </div>
     <div v-for="series in requestedTvSeries">
@@ -12,7 +14,7 @@
         <p>titolo: {{ series.name }}</p>
         <p>titolo originale: {{ series.original_name }}</p>
         <p>lingua: {{ series.original_language }}</p>
-        <p>voto: {{ series.vote_average }}/10 oppure {{ roundToFive(parseInt(series.vote_average)) }}/5</p>
+        <p>voto:{{ roundToFive(parseInt(series.vote_average)) }}/5</p>
     </div>
 </template>
 
