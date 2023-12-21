@@ -16,15 +16,18 @@
         <p>lingua: {{ series.original_language }}</p>
         <p>voto:{{ roundToFive(parseInt(series.vote_average)) }}/5</p>
     </div>
-    <FilmCard />
+    <FilmCard :requestedFilms="requestedFilms" />
+    <SeriesCard :requestedTvSeries="requestedTvSeries" />
 </template>
 
 <script>
 import FilmCard from './FilmCard.vue';
+import SeriesCard from './SeriesCard.vue';
 
 export default {
     components: {
         FilmCard,
+        SeriesCard,
     },
     props: {
         requestedFilms: Object,
