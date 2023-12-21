@@ -11,7 +11,7 @@ export default {
   },
   data() {
     return {
-      options: {
+      urlMovie: {
         method: 'GET',
         url: 'https://api.themoviedb.org/3/search/movie',
         params: { query: '', language: 'en-US', },
@@ -26,11 +26,11 @@ export default {
   },
   methods: {
     defineSearch(film) {
-      this.options.params.query = film
-      this.axiosRequest()
+      this.urlMovie.params.query = film
+      this.axiosRequestMovie()
     },
-    axiosRequest() {
-      axios.request(this.options)
+    axiosRequestMovie() {
+      axios.request(this.urlMovie)
         .then((response) => {
           this.requestedFilms = response.data.results
           console.log(response.data.results);
