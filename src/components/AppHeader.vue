@@ -10,11 +10,12 @@
                 <li class="mx-2">Aggiunti Di Recente</li>
                 <li class="mx-2">Preferiti</li>
             </ul>
-            <ul class="d-flex  m-0 me-3 p-0">
-                <input type="text" v-model="lookedFor" @keyup.enter="$emit('movieSearched', lookedFor)">
-                <button @click="$emit('movieSearched', lookedFor)"> Cerca! </button>
-            </ul>
-
+            <div class="my_input-container input-group me-3">
+                <input type="text" class="form-control" v-model="lookedFor"
+                    @keyup.enter="$emit('movieSearched', lookedFor)">
+                <button class="btn btn-outline-secondary" type="button"
+                    @click="$emit('movieSearched', lookedFor)">Cerca</button>
+            </div>
         </nav>
 
     </header>
@@ -55,6 +56,10 @@ header {
         width: 85%;
         height: 100%;
         color: white;
+
+        div.my_input-container {
+            width: 300px;
+        }
     }
 
 }
