@@ -4,22 +4,22 @@
         <div class="d-flex flex-wrap">
             <div class="my_container-info">
                 <div class="d-flex">
-                    <p class="fw-bolder">Titolo:</p>
+                    <p class="fw-bolder me-4">Titolo:</p>
                     <p class="ms-1">{{ title }}</p>
                 </div>
                 <div class="d-flex">
-                    <p class="fw-bolder">Originale:</p>
+                    <p class="fw-bolder me-1">Originale:</p>
                     <p class="ms-1">{{ original_title }}</p>
                 </div>
                 <div class="d-flex">
-                    <p class="fw-bolder">Lingua:</p>
+                    <p class="fw-bolder me-1">Lingua:</p>
                     <div class="container-language-flag ms-1">
                         <p>{{ original_languag }}</p>
                         <img class="language-flag" :src="`/src/assets/img/png100px/${original_language}.png`" alt="">
                     </div>
                 </div>
                 <div class="d-flex">
-                    <p class="fw-bolder">Voto:</p>
+                    <p class="fw-bolder me-1">Voto:</p>
                     <p class="ms-1">{{ Math.ceil(vote_average / 2) }} /5</p>
                 </div>
             </div>
