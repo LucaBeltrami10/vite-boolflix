@@ -1,7 +1,6 @@
 <template>
     <article class="mb-3 overflow-hidden me-1">
-        <!--  :src="`https://image.tmdb.org/t/p/w185/${poster_path}`"  -->
-        <img class="film-poster_path" src="../assets/img/not-available.png" :alt="`${title} cover`">
+        <img class="film-poster_path" :src="coverCreatorSrc(poster_path)" :alt="`${title} cover`">
         <div class="d-flex flex-wrap">
             <div class="my_container-info">
                 <div class="d-flex">
@@ -44,6 +43,14 @@ export default {
         }
     },
     methods: {
+
+        coverCreatorSrc(path) {
+            if (path == null) {
+                return '/src/assets/img/not-available.png';
+            } else {
+                return 'https://image.tmdb.org/t/p/w185/' + path
+            }
+        }
 
     }
 
