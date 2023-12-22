@@ -20,7 +20,7 @@
                 </div>
                 <div class="d-flex">
                     <p class="fw-bolder">Voto:</p>
-                    <p class="ms-1">{{ vote_average }} /5</p>
+                    <p class="ms-1">{{ Math.ceil(vote_average / 2) }} /5</p>
                 </div>
             </div>
         </div>
