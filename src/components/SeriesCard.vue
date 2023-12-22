@@ -1,5 +1,5 @@
 <template>
-    <article class="my-3">
+    <article class="my-3 overflow-hidden me-1">
         <img :src="`https://image.tmdb.org/t/p/w185/${poster_path}`" :alt="`${title} cover`">
         <div class="d-flex flex-wrap">
             <div class="my_container-info d-flex">

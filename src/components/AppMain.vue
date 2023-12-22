@@ -2,13 +2,13 @@
     <!-- <img :src="`../assets/img/png100px/${film.original_language}.png`" alt="">
     <img src="../assets/img/png100px/it.png" alt=""> -->
     <main>
-        <section class="film-section">
+        <section class="film-section align-content-start">
             <h1>Movies</h1>
             <FilmCard v-for="film in requestedFilms" :title="film.title" :poster_path="film.poster_path"
                 :original_title="film.original_title" :original_language="film.original_language"
                 :vote_average="film.vote_average" />
         </section>
-        <section class="series-section">
+        <section class="series-section align-content-start">
             <h1>TV Shows</h1>
             <SeriesCard v-for="series in requestedTvSeries" :name="series.name" :poster_path="series.poster_path"
                 :original_name="series.original_name" :original_language="series.original_language"
@@ -29,8 +29,8 @@ main {
     overflow: scroll;
 
     section {
-        width: calc(100% - 2rem);
-        margin: 1rem 1rem 0 1rem;
+        width: calc(100% - 9rem);
+        margin: 0 4.5rem 1rem 4.5rem;
         @include flex(row, start, center);
         flex-wrap: wrap;
 
@@ -38,6 +38,7 @@ main {
             width: 100%;
             font-size: 1.5rem;
             color: white;
+            margin-bottom: 1.5rem;
         }
 
         /* &.film-section {

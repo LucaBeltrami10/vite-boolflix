@@ -1,6 +1,6 @@
 <template>
-    <article class="my-3">
-        <img :src="`https://image.tmdb.org/t/p/w185/${poster_path}`" :alt="`${title} cover`">
+    <article class="mb-3 overflow-hidden me-1">
+        <img :src="`https://image.tmdb.org/t/p/w342/${poster_path}`" :alt="`${title} cover`">
         <div class="d-flex flex-wrap">
             <div class="my_container-info d-flex">
                 <p>{{ title }}</p>
@@ -45,7 +45,6 @@ export default {
 article {
     height: 278px;
     width: 185px;
-    overflow: hidden;
 
     &:hover img {
         display: none;
