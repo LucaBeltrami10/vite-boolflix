@@ -1,18 +1,28 @@
 <template>
     <article class="mb-3 overflow-hidden me-1">
-        <!-- <img class="film-poster_path" :src="`https://image.tmdb.org/t/p/w185/${poster_path}`" :alt="`${title} cover`"> -->
+        <img class="film-poster_path" :src="`https://image.tmdb.org/t/p/w185/${poster_path}`" :alt="`${title} cover`">
         <div class="d-flex flex-wrap">
-            <div class="my_container-info d-flex">
-                <p>{{ title }}</p>
+            <div class="my_container-info">
+                <div class="d-flex">
+                    <p class="fw-bolder">Titolo:</p>
+                    <p class="ms-1">{{ title }}</p>
+                </div>
+                <div class="d-flex">
+                    <p class="fw-bolder">Originale:</p>
+                    <p class="ms-1">{{ original_title }}</p>
+                </div>
+                <div class="d-flex">
+                    <p class="fw-bolder">Lingua:</p>
+                    <div class="container-language-flag ms-1">
+                        <p>{{ original_languag }}</p>
+                        <img class="language-flag" :src="`/src/assets/img/png100px/${original_language}.png`" alt="">
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <p class="fw-bolder">Voto:</p>
+                    <p class="ms-1">{{ vote_average }} /5</p>
+                </div>
             </div>
-            <div>
-                <p>{{ original_title }}</p>
-            </div>
-            <div class="d-flex">
-                <p>{{ original_language }}</p> <img class="language-flag"
-                    :src="`/src/assets/img/png100px/${original_language}.png`" alt="">
-            </div>
-            <div>{{ vote_average }}</div>
         </div>
     </article>
 </template>
@@ -46,13 +56,15 @@ export default {
 article {
     height: 278px;
     width: 185px;
+    color: white;
+    font-size: 0.8rem;
 
     &:hover img.film-poster_path {
         display: none;
     }
 
     &:hover div.my_container-info {
-        display: flex;
+        display: block;
     }
 
 
@@ -60,13 +72,22 @@ article {
         height: 100%;
         width: 100%;
 
-        div {
-            font-size: 0.5rem
+        div.container-language-flag {
+            height: 15px;
+            position: relative;
+
+            p {
+                position: absolute;
+                z-index: 1;
+            }
+
+            img.language-flag {
+                height: 100%;
+                z-index: 2;
+            }
         }
     }
 
-    img.language-flag {
-        height: 15px;
-    }
+
 }
 </style>
