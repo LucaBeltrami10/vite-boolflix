@@ -1,6 +1,6 @@
 <template>
     <article class="mb-3 overflow-hidden me-1">
-        <img :src="`https://image.tmdb.org/t/p/w342/${poster_path}`" :alt="`${title} cover`">
+        <img :src="`https://image.tmdb.org/t/p/w185/${poster_path}`" :alt="`${title} cover`">
         <div class="d-flex flex-wrap">
             <div class="my_container-info d-flex">
                 <p>{{ title }}</p>
