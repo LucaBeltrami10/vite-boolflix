@@ -22,6 +22,9 @@
                     <p class="fw-bolder me-1">Voto:</p>
                     <p class="ms-1">{{ Math.ceil(vote_average / 2) }} /5</p>
                 </div>
+                <div class="d-flex">
+                    <p class="ms-1">{{ cutOverview(overview) }}</p>
+                </div>
             </div>
         </div>
     </article>
@@ -50,7 +53,11 @@ export default {
             } else {
                 return 'https://image.tmdb.org/t/p/w185/' + path
             }
+        },
+        cutOverview(string) {
+            return string.slice(0, 150) + '...';
         }
+
     }
 }
 </script>
@@ -64,6 +71,7 @@ article {
     width: 185px;
     color: white;
     font-size: 0.75rem;
+    overflow: scroll;
 
     &:hover img.film-poster_path {
         display: none;
