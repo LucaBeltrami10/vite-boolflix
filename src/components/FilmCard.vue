@@ -58,7 +58,11 @@ export default {
             }
         },
         cutOverview(string) {
-            return string.slice(0, 120) + '...';
+            if (string == '') {
+                return ''
+            } else {
+                return string.slice(0, 120) + '...';
+            }
         },
         baseRatingFive(num) {
             return Math.ceil(num / 2);
