@@ -55,9 +55,8 @@ export default {
             }
         },
         cutOverview(string) {
-            return string.slice(0, 150) + '...';
-        }
-
+            return string.slice(0, 120) + '...';
+        },
     }
 }
 </script>
