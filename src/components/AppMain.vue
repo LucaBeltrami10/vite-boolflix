@@ -3,16 +3,16 @@
     <img src="../assets/img/png100px/it.png" alt=""> -->
     <main>
         <section class="film-section align-content-start">
-            <h1>Movies</h1>
+            <h1>Film</h1>
             <FilmCard v-for="film in requestedFilms" :title="film.title" :poster_path="film.poster_path"
                 :original_title="film.original_title" :original_language="film.original_language"
-                :vote_average="film.vote_average" />
+                :vote_average="film.vote_average" :overview="film.overview" />
         </section>
         <section class="series-section align-content-start">
-            <h1>TV Shows</h1>
+            <h1>Serie TV</h1>
             <SeriesCard v-for="series in requestedTvSeries" :name="series.name" :poster_path="series.poster_path"
                 :original_name="series.original_name" :original_language="series.original_language"
-                :vote_average="series.vote_average" />
+                :vote_average="series.vote_average" :overview="series.overview" />
         </section>
     </main>
 </template>

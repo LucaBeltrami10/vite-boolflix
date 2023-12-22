@@ -5,10 +5,10 @@
         </div>
         <nav>
             <ul class="d-flex m-0 p-0">
-                <li class="mx-2">TV Shows</li>
-                <li class="mx-2">Movies</li>
-                <li class="mx-2">Recently Added</li>
-                <li class="mx-2">My List</li>
+                <li class="mx-2">Serie TV</li>
+                <li class="mx-2">Film</li>
+                <li class="mx-2">Aggiunti Di Recente</li>
+                <li class="mx-2">Preferiti</li>
             </ul>
             <ul class="d-flex  m-0 me-3 p-0">
                 <input type="text" v-model="lookedFor" @keyup.enter="$emit('movieSearched', lookedFor)">

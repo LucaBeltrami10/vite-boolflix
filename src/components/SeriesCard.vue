@@ -35,6 +35,7 @@ export default {
         poster_path: 'string',
         original_language: 'string',
         vote_average: 'string',
+        overview: 'string'
     },
     data() {
         return {
@@ -62,7 +63,7 @@ article {
     height: 278px;
     width: 185px;
     color: white;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 
     &:hover img.film-poster_path {
         display: none;
