@@ -1,6 +1,7 @@
 <template>
     <article class="mb-3 overflow-hidden me-1">
-        <img class="film-poster_path" :src="`https://image.tmdb.org/t/p/w185/${poster_path}`" :alt="`${title} cover`">
+        <!--  :src="`https://image.tmdb.org/t/p/w185/${poster_path}`"  -->
+        <img class="film-poster_path" src="../assets/img/not-available.png" :alt="`${title} cover`">
         <div class="d-flex flex-wrap">
             <div class="my_container-info">
                 <div class="d-flex">
