@@ -13,7 +13,7 @@ export default {
       urlMovie: {
         method: 'GET',
         url: 'https://api.themoviedb.org/3/search/movie',
-        params: { query: '', language: 'en-US' },
+        params: { query: 'harry potter', language: 'en-US' },
         headers: {
           accept: 'application/json',
           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjY2QxYjFmNjliZmFlNWQxZTE4MzQ0NmVmZWZiMTA5YyIsInN1YiI6IjY1ODMwNTYwZTI5NWI0M2JjNzY4NzExNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lZNNGkfj6G0PG7Dkrowbcmo9dtKA-R4srQlPpR2-YKI'
@@ -22,7 +22,7 @@ export default {
       urlTvSeries: {
         method: 'GET',
         url: 'https://api.themoviedb.org/3/search/tv',
-        params: { query: '', language: 'en-US' },
+        params: { query: 'harry potter', language: 'en-US' },
         headers: {
           accept: 'application/json',
           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjY2QxYjFmNjliZmFlNWQxZTE4MzQ0NmVmZWZiMTA5YyIsInN1YiI6IjY1ODMwNTYwZTI5NWI0M2JjNzY4NzExNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lZNNGkfj6G0PG7Dkrowbcmo9dtKA-R4srQlPpR2-YKI'
@@ -38,8 +38,8 @@ export default {
     defineSearch(searched) {
       this.urlMovie.params.query = searched
       this.urlTvSeries.params.query = searched
-      this.axiosRequestMovie()
-      this.axiosRequestTvSeries()
+      this.axiosRequestMovie();
+      this.axiosRequestTvSeries();
     },
     axiosRequestMovie() {
       axios.request(this.urlMovie)
@@ -61,6 +61,10 @@ export default {
           console.error(error);
         });
     }
+  },
+  created() {
+    this.axiosRequestMovie()
+    this.axiosRequestTvSeries()
   }
 }
 
