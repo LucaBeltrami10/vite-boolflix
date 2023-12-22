@@ -20,7 +20,8 @@
                 </div>
                 <div class="d-flex">
                     <p class="fw-bolder me-1">Voto:</p>
-                    <p class="ms-1">{{ Math.ceil(vote_average / 2) }} /5</p>
+                    <img v-for="el in baseRatingFive(vote_average)" class="rating-star" src="../assets/img/red-star.png"
+                        alt="red star">
                 </div>
                 <div class="d-flex">
                     <p class="ms-1">{{ cutOverview(overview) }}</p>
@@ -56,6 +57,9 @@ export default {
         cutOverview(string) {
             return string.slice(0, 120) + '...';
         },
+        baseRatingFive(num) {
+            return Math.ceil(num / 2);
+        },
     }
 
 }
@@ -82,6 +86,10 @@ article {
     div.my_container-info {
         height: 100%;
         width: 100%;
+
+        img.rating-star {
+            height: 15px;
+        }
 
         div.container-language-flag {
             height: 15px;
