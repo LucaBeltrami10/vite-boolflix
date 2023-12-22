@@ -1,6 +1,6 @@
 <template>
     <article class="mb-3 overflow-hidden me-1">
-        <img :src="`https://image.tmdb.org/t/p/w185/${poster_path}`" :alt="`${title} cover`">
+        <!-- <img class="film-poster_path" :src="`https://image.tmdb.org/t/p/w185/${poster_path}`" :alt="`${title} cover`"> -->
         <div class="d-flex flex-wrap">
             <div class="my_container-info d-flex">
                 <p>{{ title }}</p>
@@ -9,7 +9,8 @@
                 <p>{{ original_title }}</p>
             </div>
             <div class="d-flex">
-                <p>{{ original_language }}</p> <img :src="`/src/assets/img/png100px/${original_language}.png`" alt="">
+                <p>{{ original_language }}</p> <img class="language-flag"
+                    :src="`/src/assets/img/png100px/${original_language}.png`" alt="">
             </div>
             <div>{{ vote_average }}</div>
         </div>
@@ -46,7 +47,7 @@ article {
     height: 278px;
     width: 185px;
 
-    &:hover img {
+    &:hover img.film-poster_path {
         display: none;
     }
 
@@ -62,6 +63,10 @@ article {
         div {
             font-size: 0.5rem
         }
+    }
+
+    img.language-flag {
+        height: 15px;
     }
 }
 </style>
