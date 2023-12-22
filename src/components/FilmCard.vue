@@ -43,7 +43,6 @@ export default {
         }
     },
     methods: {
-
         coverCreatorSrc(path) {
             if (path == null) {
                 return '/src/assets/img/not-available.png';
@@ -51,9 +50,7 @@ export default {
                 return 'https://image.tmdb.org/t/p/w185/' + path
             }
         }
-
     }
-
 }
 </script>
 
@@ -75,7 +72,6 @@ article {
         display: block;
     }
 
-
     div.my_container-info {
         height: 100%;
         width: 100%;
@@ -95,7 +91,5 @@ article {
             }
         }
     }
-
-
 }
 </style>

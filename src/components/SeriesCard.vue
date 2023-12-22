@@ -1,17 +1,28 @@
 <template>
-    <article class="my-3 overflow-hidden me-1">
-        <img :src="`https://image.tmdb.org/t/p/w185/${poster_path}`" :alt="`${title} cover`">
+    <article class="mb-3 overflow-hidden me-1">
+        <img class="film-poster_path" :src="coverCreatorSrc(poster_path)" :alt="`${name} cover`">
         <div class="d-flex flex-wrap">
-            <div class="my_container-info d-flex">
-                <p>{{ name }}</p>
+            <div class="my_container-info">
+                <div class="d-flex">
+                    <p class="fw-bolder me-4">Titolo:</p>
+                    <p class="ms-1">{{ name }}</p>
+                </div>
+                <div class="d-flex">
+                    <p class="fw-bolder me-1">Originale:</p>
+                    <p class="ms-1">{{ original_name }}</p>
+                </div>
+                <div class="d-flex">
+                    <p class="fw-bolder me-1">Lingua:</p>
+                    <div class="container-language-flag ms-1">
+                        <p>{{ original_languag }}</p>
+                        <img class="language-flag" :src="`/src/assets/img/png100px/${original_language}.png`" alt="">
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <p class="fw-bolder me-1">Voto:</p>
+                    <p class="ms-1">{{ Math.ceil(vote_average / 2) }} /5</p>
+                </div>
             </div>
-            <div>
-                <p>{{ original_name }}</p>
-            </div>
-            <div class="d-flex">
-                <p>{{ original_language }}</p> <img :src="`/src/assets/img/png100px/${original_language}.png`" alt="">
-            </div>
-            <div>{{ vote_average }}</div>
         </div>
     </article>
 </template>
@@ -31,7 +42,13 @@ export default {
         }
     },
     methods: {
-
+        coverCreatorSrc(path) {
+            if (path == null) {
+                return '/src/assets/img/not-available.png';
+            } else {
+                return 'https://image.tmdb.org/t/p/w185/' + path
+            }
+        }
     }
 
 }
@@ -44,23 +61,34 @@ export default {
 article {
     height: 278px;
     width: 185px;
-    overflow: hidden;
+    color: white;
+    font-size: 0.8rem;
 
-    &:hover img {
+    &:hover img.film-poster_path {
         display: none;
     }
 
     &:hover div.my_container-info {
-        display: flex;
+        display: block;
     }
-
 
     div.my_container-info {
         height: 100%;
         width: 100%;
 
-        div {
-            font-size: 0.5rem
+        div.container-language-flag {
+            height: 15px;
+            position: relative;
+
+            p {
+                position: absolute;
+                z-index: 1;
+            }
+
+            img.language-flag {
+                height: 100%;
+                z-index: 2;
+            }
         }
     }
 }
